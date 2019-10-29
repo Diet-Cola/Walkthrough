@@ -1,12 +1,13 @@
-package com.cola.walkthrough;
+package com.github.diet;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
+import com.github.diet.listeners.PlayerListener;
+import com.github.diet.utils.WalkthroughSettingsManager;
+
 import hu.trigary.advancementcreator.Advancement;
 import hu.trigary.advancementcreator.AdvancementFactory;
-import listeners.PlayerListener;
-import utils.WalkthroughSettingsManager;
 import vg.civcraft.mc.civmodcore.ACivMod;
 
 public class Walkthrough extends ACivMod {
@@ -23,6 +24,7 @@ public class Walkthrough extends ACivMod {
 	public WalkthroughSettingsManager getSettingsManager() {
 		return settingsManager;
 	}
+	@Override
 	public void onEnable() {
 		super.onEnable();
 		instance = this;
@@ -40,6 +42,7 @@ public class Walkthrough extends ACivMod {
 		Bukkit.reloadData();
 	}
 	
+	@Override
 	public void onDisable() {
 		Bukkit.shutdown();
 	}

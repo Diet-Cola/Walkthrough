@@ -1,4 +1,4 @@
-package listeners;
+package com.github.diet.listeners;
 
 import org.bukkit.event.Listener;
 
