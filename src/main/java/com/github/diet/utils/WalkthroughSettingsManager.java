@@ -1,8 +1,8 @@
-package utils;
+package com.github.diet.utils;
 
 import java.util.UUID;
 
-import com.cola.walkthrough.Walkthrough;
+import com.github.diet.Walkthrough;
 
 import vg.civcraft.mc.civmodcore.playersettings.PlayerSettingAPI;
 import vg.civcraft.mc.civmodcore.playersettings.gui.MenuSection;
