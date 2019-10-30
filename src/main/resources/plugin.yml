@@ -1,5 +1,5 @@
 name: Walkthrough
-main: com.cola.walkthrough.Walkthrough
+main: com.github.diet.Walkthrough
 version: 0.1
 author: Diet_Cola
 api-version: 1.13
