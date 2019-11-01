@@ -31,4 +31,15 @@ public class AdvancementUtils {
 	public static boolean advancementExists(JavaPlugin plugin, String key){
 	    return getAdvancement(plugin, key) != null;
 	}
+	
+	public static boolean hasAdvancement(String key, Player p) {
+		NamespacedKey nsk = new NamespacedKey(Walkthrough.getInstance(), key);
+		Advancement adv = Walkthrough.getInstance().getServer().getAdvancement(nsk);
+		if (p.getAdvancementProgress(adv).isDone()) {
+			return true;
+		} else {
+			return false;			
+		}
+
+	}
 };
