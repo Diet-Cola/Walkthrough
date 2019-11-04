@@ -73,5 +73,10 @@
 			<artifactId>hiddenore</artifactId>
 			<version>1.6.0</version>
 		</dependency>
+		<dependency>
+			<groupId>vg.civcraft.mc.citadel</groupId>
+			<artifactId>Citadel</artifactId>
+			<version>4.0.1</version>
+		</dependency>
 	</dependencies>
 </project>

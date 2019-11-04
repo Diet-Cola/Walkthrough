@@ -3,6 +3,10 @@ package com.github.diet;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
+import com.github.diet.listeners.CitadelListener;
+import com.github.diet.listeners.FactoryModListener;
+import com.github.diet.listeners.HiddenOreListener;
+import com.github.diet.listeners.JukeAlertListener;
 import com.github.diet.listeners.PlayerListener;
 import com.github.diet.utils.WalkthroughSettingsManager;
 
@@ -24,6 +28,7 @@ public class Walkthrough extends ACivMod {
 		return settingsManager;
 	}
 	@Override
+	@SuppressWarnings("unused")
 	public void onEnable() {
 		super.onEnable();
 		instance = this;
@@ -37,7 +42,12 @@ public class Walkthrough extends ACivMod {
 		Advancement localChat = factory.getImpossible("main/localChat", mainRoot, "Only few can hear you...", "Chat range is limited to 1,000 blocks here.", Material.BOOK);
 		Advancement getWood = factory.getImpossible("main/getWood", localChat, "Things grow differently here", "Trees and crops grow differently by biome. Try right clicking the ground with a sapling.", Material.OAK_LOG);
 		Advancement goMining = factory.getImpossible("main/goMining", localChat, "You found an ore!", "Ore generates as you mine stone!", Material.DIAMOND_ORE);
+		Advancement reinforce = factory.getImpossible("main/reinforce", localChat, "You reinforced a block!", "This block is now stronger due to you reinforcing it. Use /rein to see the different reinforcements!", Material.IRON_INGOT);
 		registerListener(new PlayerListener());
+		registerListener(new CitadelListener());
+		registerListener(new JukeAlertListener());
+		registerListener(new FactoryModListener());
+		registerListener(new HiddenOreListener());
 		settingsManager = new WalkthroughSettingsManager();
 		getLogger().info("Walkthrough enabled");
 		//Required to stop advancements overlapping each other.
